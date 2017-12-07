@@ -12,4 +12,10 @@ for x in ti.towerinput.split('\n'):
     else:
         tower[x[:x.find(' ')]]['children'] = []
 
+tower2 = {}
+for prog in tower:
+    for child in tower[prog]['children']:
+        pass
+
+
 print tower
