@@ -1,5 +1,10 @@
 import tower as ti
 
+
+def kids(program, children):
+    pass
+
+
 tower = {}
 
 for x in ti.towerinput.split('\n'):
@@ -12,10 +17,9 @@ for x in ti.towerinput.split('\n'):
     else:
         tower[x[:x.find(' ')]]['children'] = []
 
-tower2 = {}
+child_parent = {}
 for prog in tower:
-    for child in tower[prog]['children']:
-        pass
+    for x in tower[prog]['children']:
+        child_parent[x] = prog
 
-
-print tower
+print list(set(tower.keys()) - set(child_parent.keys()))
