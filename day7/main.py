@@ -22,4 +22,28 @@ for prog in tower:
     for x in tower[prog]['children']:
         child_parent[x] = prog
 
-print list(set(tower.keys()) - set(child_parent.keys()))
+root = list(set(tower.keys()) - set(child_parent.keys()))
+root = root[0]
+print root
+
+
+balance = {}
+for x in tower:
+    weights = []
+    for y in tower[x]['children']:
+        weights.append((y, tower[y]['weight']))
+
+    if weights:
+        balance[x] = weights
+
+print balance
+print tower
+
+
+for x in balance.iteritems():
+    print x
+
+
+#print (root, tower[root]['weight'])
+
+
