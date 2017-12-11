@@ -43,6 +43,23 @@ print tower
 for x in balance.iteritems():
     print x
 
+tower2 = {}
+prog = root
+layer = 0
+platform = 0
+tower2[str(layer) + ':' + str(platform)] = [(prog, tower[prog]['weight'])]
+children = balance[prog]
+
+while layer < 1000:
+    layer += 1
+    for x, prog in enumerate(children):
+        tower2[str(layer) + ':' + str(x)] = [(prog, tower[prog]['weight'])]
+
+print tower2
+
+
+
+
 
 #print (root, tower[root]['weight'])
 
